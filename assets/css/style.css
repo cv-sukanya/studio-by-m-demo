@@ -1192,14 +1192,34 @@ body {
         transform: scale(1);
         opacity: 1;
     }
+.pap-slider-wrapper {
+    overflow: hidden;
+    display: block;
+  }
 
+  .pap-slider {
+    display: flex;
+  }
     .pap h2 {
         color: #fff;
         font-size: 36px;
     }
+    
 
     
 }
+
+/* @media (max-width: 600px) {
+  .pap-slider-wrapper {
+    overflow: hidden;
+    display: block;
+  }
+
+  .pap-slider {
+    display: flex;
+  }
+} */
+
 
 
 
