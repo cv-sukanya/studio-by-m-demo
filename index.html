@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Studio By M - Final</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/logo/favicon.png"
+    />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="16x16" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="32x32" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="48x48" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="180x180" />
+    <link rel="icon" href="assets/images/logo/favicon.png" sizes="192x192" />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="assets/images/logo/favicon.png"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="assets/images/logo/favicon.png"
+    />
+  </head>
+  <body>
+    <!-- ===== LOADER ===== -->
+    <div class="loader">
+      <img src="assets/images/logo/studio-by-m1.png" alt="Logo" />
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+      <div class="nav-left">
+        <a href="#">ABOUT</a>
+        <a href="#">PRESS</a>
+        <a href="#">BTS</a>
+      </div>
+
+      <div class="nav-center">Studio By M</div>
+
+      <div class="nav-right">
+        <a href="#">PROJECTS</a>
+        <a href="#">CAREER</a>
+        <a href="javascript:void(0)" onclick="toggleTalk()"
+          >LET’S TALK <span>+</span></a
+        >
+      </div>
+
+      <!-- Mobile -->
+      <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+
+      <div class="mobile-talk-btn" onclick="toggleTalk()">✈</div>
+    </header>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Projects</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+      <a href="#">Career</a>
+      <!-- <a href="javascript:void(0)" onclick="toggleTalk()">LET’S TALK <span>+</span></a> -->
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-footer">
+        <span>TEXT</span>
+        <span>LOCATION</span>
+      </div>
+
+      <!-- Static Logo -->
+      <div class="hero-static-logo">
+        <img src="assets/images/logo/studio-by-m1.png" alt="Studio By M Logo" />
+      </div>
+    </section>
+
+    <!-- ===== LET'S TALK PANEL ===== -->
+    <div class="talk-panel" id="talkPanel">
+      <div class="talk-header">
+        <button class="close-btn" onclick="toggleTalk()">CLOSE ✕</button>
+      </div>
+
+      <div class="talk-content">
+        <div class="talk-left">
+          <h2>LET’S<br />CONNECT</h2>
+        </div>
+
+        <div class="talk-right">
+          <p class="talk-title">
+            TELL US A LITTLE BIT ABOUT YOURSELF AND WE WILL GET BACK TO YOU AS
+            SOON AS WE CAN
+          </p>
+
+          <form class="talk-form">
+            <div class="field">
+              <label>FIRST NAME*</label>
+              <input type="text" name="firstname" />
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <!-- <div class="form-row">
+            <div>
+              <label>CODE*</label>
+              <select>
+                <option>+91</option>
+                <option>+44</option>
+                <option>+1</option>
+              </select>
+            </div>
+            <div>
+              <label>PHONE NUMBER*</label>
+              <input type="tel" required>
+            </div>
+          </div> -->
+
+            <!-- <label>PHONE NUMBER*</label>
+          <input type="tel" required> -->
+            <div class="field">
+              <label>PHONE NUMBER*</label>
+              <input type="tel" name="tel" />
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <div class="field">
+              <label>EMAIL*</label>
+              <input type="email" name="email" />
+              <span class="error-text">Is a required field</span>
+            </div>
+
+            <p class="form-error">Complete all fields to continue</p>
+
+            <button type="button" class="next-btn" onclick="validateForm()">
+              NEXT
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== AWARDS SECTION ===== -->
+    <section class="awards-section">
+      <div class="awards-container">
+        <!-- Left Image -->
+        <div class="awards-image" data-aos="fade-right">
+          <img src="assets/images/img2.jpg" alt="Studio Awards" />
+        </div>
+
+        <!-- Right Content -->
+        <div class="awards-content" data-aos="fade-up">
+          <span class="award-eyebrow">AWARD WINNING GLOBAL</span>
+
+          <h2>
+            Luxury Architecture & Interior Design Studio
+            <span class="highlight">Crafting Timeless Luxury</span>
+          </h2>
+
+          <!-- <p class="award-subtitle">Crafting Timeless Luxury</p> -->
+
+          <p class="award-info">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. A quisquam
+            fugiat mollitia sint eius totam unde vero illum tempora nostrum,
+            dolorem numquam error vel nesciunt reprehenderit odio magni
+            eligendi. Eius. <br />
+            <br />
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            consectetur sunt dicta animi mollitia aperiam, iusto facere sapiente
+            officia, atque, enim eum! Dolor tempora, velit facilis maiores earum
+            dolore eos temporibus, ex dignissimos consectetur magni ipsam. Neque
+            alias consequatur non.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects section -->
+    <section class="projects">
+      <!-- SCROLLING TITLE -->
+      <div class="projects-title-wrap">
+        <h2 class="projects-title">SPACES WE’VE CREATED</h2>
+      </div>
+
+      <!-- PROJECT GRID -->
+      <div class="container-fluid">
+        <div class="projects-grid">
+          <div class="project-item tall">
+            <img src="assets/images/img1.jpg" alt="" />
+            <button class="project-open">+</button>
+          </div>
+
+          <div class="project-item">
+            <img src="assets/images/img2.jpg" alt="" />
+            <button class="project-open">+</button>
+          </div>
+
+          <div class="project-item wide">
+            <img src="assets/images/img3.jpg" alt="" />
+            <button class="project-open">+</button>
+          </div>
+
+          <div class="project-item">
+            <img src="assets/images/img4.jpg" alt="" />
+            <button class="project-open">+</button>
+          </div>
+
+          <div class="project-item tall">
+            <img src="assets/images/hero-banner.jpg" alt="" />
+            <button class="project-open">+</button>
+          </div>
+
+          <div class="project-item">
+            <img src="assets/images/img4.jpg" alt="" />
+            <button class="project-open">+</button>
+          </div>
+        </div>
+        <div class="all-project">
+          <a href="#" class="all-proj-btn">Explore Our Work</a>
+        </div>
+      </div>
+    </section>
+    <!-- Project IMAGE MODAL -->
+    <div class="image-modal" id="imageModal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-img" src="" alt="Full View" />
+    </div>
+
+    <!-- What We Do -->
+    <section class="wwd-section">
+      <h2 class="wwd-title" data-aos="fade-up">WHAT WE DO</h2>
+      <div class="wwd-grid">
+        <!-- Card 1 -->
+        <div class="wwd-card" data-aos="fade-right">
+          <img src="assets/images/img1.jpg" alt="Residential" />
+
+          <div class="wwd-overlay">
+            <h3>RESIDENTIAL</h3>
+            <a href="#" class="wwd-btn">LEARN MORE</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="wwd-card" data-aos="fade-left">
+          <img src="assets/images/img4.jpg" alt="Hospitality" />
+
+          <div class="wwd-overlay">
+            <h3>HOSPITALITY</h3>
+            <a href="#" class="wwd-btn">LEARN MORE</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="wwd-card" data-aos="fade-right">
+          <img src="assets/images/img1.jpg" alt="Convercial" />
+
+          <div class="wwd-overlay">
+            <h3>CONVERCIAL</h3>
+            <a href="#" class="wwd-btn">LEARN MORE</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="wwd-card" data-aos="fade-left">
+          <img src="assets/images/img4.jpg" alt="Retail Design" />
+
+          <div class="wwd-overlay">
+            <h3>RETAIL DESIGN</h3>
+            <a href="#" class="wwd-btn">LEARN MORE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-section">
+      <div class="about-container">
+        <!-- Left Image -->
+        <div class="about-image" data-aos="fade-right">
+          <img src="assets/images/img4.jpg" alt="about" />
+        </div>
+
+        <!-- Right Content -->
+        <div class="about-content" data-aos="fade-up">
+          <!-- <span class="about-eyebrow">AWARD WINNING GLOBAL</span> -->
+
+          <h2>ABOUT</h2>
+
+          <!-- <p class="about-subtitle">Crafting Timeless Luxury</p> -->
+
+          <p class="about-info">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. A quisquam
+            fugiat mollitia sint eius totam unde vero illum tempora nostrum,
+            dolorem numquam error vel nesciunt reprehenderit odio magni
+            eligendi. Eius. <br />
+            <br />
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            consectetur sunt dicta animi mollitia aperiam, iusto facere sapiente
+            officia, atque, enim eum! Dolor tempora, velit facilis maiores earum
+            dolore eos temporibus, ex dignissimos consectetur magni ipsam. Neque
+            alias consequatur non.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="process-section">
+      <h3 class="process-title" data-aos="fade-up">PROCESS</h3>
+      <div class="process-container">
+        <!-- Left Content -->
+        <div class="process-text">
+          <!-- <h3>PROCESS</h3> -->
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+            aspernatur dicta tempore harum aut, quidem qui, corporis magnam
+            atque, enim facilis eveniet at veritatis inventore voluptatem
+            perspiciatis. Aperiam, unde. Laboriosam est tempora odio veniam
+            rerum earum ipsam excepturi fuga perspiciatis.
+          </p>
+        </div>
+
+        <!-- Before / After Image -->
+        <div class="process-slider">
+          <div class="img-wrapper">
+            <!-- After Image -->
+            <img src="assets/images/img1.jpg" alt="After" class="after-img" />
+
+            <!-- Before Image -->
+            <div class="before-img">
+              <img src="assets/images/img2.jpg" alt="Before" />
+            </div>
+
+            <span class="img-label before-label">BEFORE</span>
+            <span class="img-label after-label">AFTER</span>
+
+            <!-- Slider Line -->
+            <span class="slider-line"></span>
+            <span class="slider-handle">
+              <img
+                src="assets/images/logo/studio-by-m1.png"
+                alt="Studio By M"
+              />
+            </span>
+          </div>
+
+          <!-- <div class="labels">
+            <span>BEFORE</span>
+            <span>AFTER</span>
+          </div> -->
+        </div>
+
+        <!-- Right Content -->
+        <div class="process-text">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+            quidem eum saepe reprehenderit dolorem officia. Voluptates, harum
+            ex, soluta eum itaque mollitia quaerat ad totam et omnis accusamus,
+            saepe veritatis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Press, Award, Publication Section -->
+    <section class="pap">
+      <div class="container">
+        <h2 data-aos="fade-up">PRESS, AWARD & PUBLICATION</h2>
+
+        <div class="pap-slider-wrapper">
+          <button class="pap-nav prev" aria-label="Previous">‹</button>
+
+          <div class="pap-slider">
+            <!-- Card 1 -->
+            <div class="pap-card">
+              <img src="assets/images/img3.jpg" alt="Press 1" />
+              <span class="pap-tag">PRESS</span>
+              <h4>Architecture Today1</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
+                debitis!
+              </p>
+              <a href="#" class="view-pap">View</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="pap-card">
+              <img src="assets/images/img1.jpg" alt="Press 2" />
+              <span class="pap-tag">AWARD</span>
+              <h4>Design Excellence Award2</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
+                debitis!
+              </p>
+              <a href="#" class="view-pap">View</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="pap-card">
+              <img src="assets/images/img2.jpg" alt="Press 3" />
+              <span class="pap-tag">PUBLICATION</span>
+              <h4>Interior World3</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
+                debitis!
+              </p>
+              <a href="#" class="view-pap">View</a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="pap-card">
+              <img src="assets/images/img3.jpg" alt="Press 4" />
+              <span class="pap-tag">PRESS</span>
+              <h4>Modern Spaces4</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
+                debitis!
+              </p>
+              <a href="#" class="view-pap">View</a>
+            </div>
+
+            <div class="pap-card">
+              <img src="assets/images/img1.jpg" alt="Press 2" />
+              <span class="pap-tag">AWARD</span>
+              <h4>Design Excellence Award5</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
+                debitis!
+              </p>
+              <a href="#" class="view-pap">View</a>
+            </div>
+
+            <div class="pap-card">
+              <img src="assets/images/img1.jpg" alt="Press 2" />
+              <span class="pap-tag">AWARD</span>
+              <h4>Design Excellence Award6</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
+                debitis!
+              </p>
+              <a href="#" class="view-pap">View</a>
+            </div>
+
+            <div class="pap-card">
+              <img src="assets/images/img1.jpg" alt="Press 2" />
+              <span class="pap-tag">AWARD</span>
+              <h4>Design Excellence Award7</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque,
+                debitis!
+              </p>
+              <a href="#" class="view-pap">View</a>
+            </div>
+          </div>
+
+          <button class="pap-nav next" aria-label="Next">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT US ===== -->
+    <section class="contact-section">
+      <h2>Contact us</h2>
+      <div class="contact-container">
+        
+        <!-- Column 1 : Address -->
+        <div class="contact-col address">
+          <!-- <h4>Address</h4> -->
+          <p>
+            Studio By M<br />
+            3rd Floor, Design House<br />
+            Mumbai, India
+          </p>
+          <!-- <p>
+            <a href="mailto:hello@studiobym.com">hello@studiobym.com</a><br>
+            +91 98765 43210
+          </p> -->
+        </div>
+
+        <!-- Column 2 : Social Media -->
+        <div class="contact-col social">
+          <!-- <h4>FOLLOW US</h4> -->
+          <div class="social-icons">
+            <a href="#" target="_blank" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+        
+            <a href="#" target="_blank" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        
+            <a href="#" target="_blank" aria-label="Behance">
+              <i class="fa-brands fa-behance"></i>
+            </a>
+        
+            <a href="#" target="_blank" aria-label="Pinterest">
+              <i class="fa-brands fa-pinterest-p"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 3 : Logo -->
+        <div class="contact-col logo">
+          <!-- <img
+            src="assets/images/logo/studio-by-m1.png"
+            alt="Studio By M Logo"
+          /> -->
+          <a href="#"><img
+            src="assets/images/logo/studio-by-m1.png"
+            alt="Studio By M Logo"
+          /></a>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="bottom-footer">
+      <div class="bottom-content">
+        <p>© 2026 Studio By M. All Rights Reserved. </p>
+        <p> Designed by <a href="#">Chronicle Ventures</a></p>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        easing: "ease-out-cubic",
+        once: true,
+      });
+    </script>
+  </body>
+</html>
