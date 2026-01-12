@@ -321,6 +321,14 @@ body {
     font-weight: 400;
     /* max-width: 520px; */
 }
+/* @media (max-width:512px){
+    .talk-left h2{
+        font-size: 30px;
+    }
+    .talk-title{
+        font-size: 16px;
+    }
+} */
 
 
 /* Form */
@@ -409,13 +417,16 @@ body {
         padding: 80px 30px;
     }
 
-    .talk-left h1 {
+    .talk-left h2 {
         font-size: 56px;
         margin-bottom: 40px;
     }
 
     .talk-right {
         padding-left: 0;
+    }
+    .talk-title{
+        font-size: 16px;
     }
 }
 
