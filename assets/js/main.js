@@ -299,13 +299,26 @@ function stopAutoScroll() {
 papSlider.addEventListener("mouseenter", stopAutoScroll);
 papSlider.addEventListener("mouseleave", startAutoScroll);
 
-window.addEventListener("resize", () => {
-  papSlider.innerHTML = "";
-  papCards = Array.from(document.querySelectorAll(".pap-card"));
-  setupInfiniteLoop();
-  updatePapSlider(false);
-});
+// window.addEventListener("resize", () => {
+//   papSlider.innerHTML = "";
+//   papCards = Array.from(document.querySelectorAll(".pap-card"));
+//   setupInfiniteLoop();
+//   updatePapSlider(false);
+// });
+let currentView = getCardsPerView();
 
+window.addEventListener("resize", () => {
+  const newView = getCardsPerView();
+
+  if (newView !== currentView) {
+    currentView = newView;
+
+    papSlider.innerHTML = "";
+    papCards = Array.from(document.querySelectorAll(".pap-card"));
+    setupInfiniteLoop();
+    updatePapSlider(false);
+  }
+});
 /* ===== INIT ===== */
 setupInfiniteLoop();
 updatePapSlider(false);
